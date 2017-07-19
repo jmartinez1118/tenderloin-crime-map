@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta charset = "UTF-8">
+<head>
+  <title>TENDERLOIN CRIME</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+  
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcxCTneoolsMGhrbXjxf14jg9ozDrP-QQ&callback=initMap"
+  type="text/javascript"></script>
+<script type="text/javascript">
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 37.784204, lng: -122.414354},
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+}
+</script>
+
+<header>
+  
+
+
+</header>
+<h1>Crime Map Of SF's Tenderlon District</h1>
+
+
+<div id="controls">
+  <p>DAY OF WEEK:</p><br>
+  <input type="radio" name="day" value="Monday" id="myRadio" checked>MONDAY
+  <input type="radio" name="day" value="Tuesday" id="myRadio">TUESDAY
+  <input type="radio" name="day" value="Wednesday" id="myRadio">WEDNESDAY
+  <input type="radio" name="day" value="Thursday" id="myRadio">THURSDAY
+  <input type="radio" name="day" value="Friday"   id="myRadio">FRIDAY
+  <input type="radio" name="day" value="Saturday" id="myRadio">SATURDAY
+  <input type="radio" name="day" value="Sunday"   id="myRadio">SUNDAY<br><br>
+  
+
+<div id="controls">
+  <p>TYPE OF CRIME:</p><br>
+  <input type="radio" name="offense" value="VANDALISM" id="myRadio">VANDALISM
+  <input type="radio" name="offense" value="ROBBERY" id="myRadio">ROBBERY
+  <input type="radio" name="offense" value="DRUG/NARCOTIC" id="myRadio" checked>DRUG/NARCOTIC
+  <input type="radio" name="offense" value="VEHICLE THEFT" id="myRadio">VEHICLE THEFT
+  <input type="radio" name="offense" value="ASSAULT"   id="myRadio">ASSAULT<br>
+  <input type="radio" name="offense" value="LARCENY/THEFT"   id="myRadio">LARCENY/THEFT
+  <input type="radio" name="offense" value="MISSING PERSON"   id="myRadio">MISSING PERSON
+  <input type="radio" name="offense" value="OTHER OFFENSES"   id="myRadio">OTHER OFFENSES
+  <input type="radio" name="offense" value="FRAUD"   id="myRadio">FRAUD
+  <input type="radio" name="offense" value="PROSTITUTION"   id="myRadio">PROSTITUTION<br>
+
+  
+  <button class="btn btn-primary" onclick="getData()">FIND CRIME</button><br>
+  
+  <p id="details">* Hover over the marker to see details for the crime</p>
+
+</div>
+</div>
+
+
+<div style="width: 70%; margin: auto; height: 500px" id="map"></div>
+
+
+
+
+<!-- We need to include jquery or else our AJAX 
+request will fail player! -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
